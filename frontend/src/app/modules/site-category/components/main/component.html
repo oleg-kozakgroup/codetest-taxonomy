@@ -1,0 +1,23 @@
+<form [formGroup]="categoriesForm" (ngSubmit)="getCategories()">
+    <mat-form-field class="full-width">
+        <input type="text" required autocomplete="off" matInput placeholder="Site Url" formControlName="url">
+    </mat-form-field>
+    <button
+            type="submit"
+            class="get-categories-button full-width"
+            color="primary" mat-raised-button
+            [disabled]="!categoriesForm.valid || loading">
+        <progress-spinner *ngIf="loading; else text"></progress-spinner>
+        <ng-template #text>Get categories</ng-template>
+    </button>
+</form>
+<ng-container *ngIf="categories.length">
+    <h5>Top categories</h5>
+    <div class="chips-list-wrapper">
+        <mat-chip-list>
+            <mat-chip color="primary" selected *ngFor="let category of categories">{{ category }}</mat-chip>
+        </mat-chip-list>
+    </div>
+</ng-container>
+    
+

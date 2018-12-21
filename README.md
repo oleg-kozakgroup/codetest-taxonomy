@@ -30,3 +30,25 @@ http://www.bedandbreakfast.com
 http://www.banglads.com
 
 http://www.infinityhall.com
+
+## Instruction for start
+##### Download packages
+
+```
+npm run install-packages
+```
+##### Start application
+```
+npm run start
+```
+##### Stop application
+```
+npm run stop
+```
+##### Run API tests
+```
+npm run api-test
+```
+
+
+
